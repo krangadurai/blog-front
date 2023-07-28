@@ -4,7 +4,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch,useSelector } from "react-redux";
 import { setLoginUsersData } from "../app/reducer";
 import Authapi from '../app/api/Auth.api';
-
+import api  from "../app/api/api.config";
 const Login = () => {
     const loginState = useSelector((state) => state.app.LoginUser);
     const [signin,setSignin] = useState({username:null,password:null})
@@ -28,7 +28,6 @@ const Login = () => {
         if(errorCheck.length ==0){
            try {
                const response = await Authapi.signin(signin);
-               console.log(response)
                sessionStorage.setItem('token', response.data.token);
                dispatch(setLoginUsersData(response.data));
            } catch (error) {

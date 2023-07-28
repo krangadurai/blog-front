@@ -147,19 +147,13 @@ const PostFormDashboard  = () => {
 
   const UpdatePost = async (data) => {
     try {
-      const formData = new FormData(); // Create a new FormData object
+      const formData = new FormData(); 
   
-      // Append the fields from the 'data' object to the FormData
       for (const field in data) {
         formData.append(field, data[field]);
       }
-  
-      const headers = {
-        Authorization: `Bearer ${loginState.token}`,
-        'Content-Type': 'multipart/form-data',
-      };
-  
-      await BlogPostApi.update(id, formData, headers); // Pass the updated 'formData' and 'headers' to the update function
+
+      await BlogPostApi.update(id, formData);
       console.log('Blog post updated successfully!');
       history.push("/dashboard/listPost"); 
     } catch (error) {
@@ -168,18 +162,13 @@ const PostFormDashboard  = () => {
   };
   const CratePost = async (data) =>{
     try {
-      const formData = new FormData(); // Create a new FormData object
-  
-      // Append the fields from the 'data' object to the FormData
+      const formData = new FormData(); 
+ 
       for (const field in data) {
         formData.append(field, data[field]);
       }
-      console.log(formData)
-      const headers = {
-        Authorization: `Bearer ${loginState.token}`,
-        'Content-Type': 'multipart/form-data',
-      };
-      await BlogPostApi.create( formData, headers);
+      
+      await BlogPostApi.create( formData);
       console.log('Blog post updated successfully!');
       history.push("/dashboard/listPost"); 
     } catch (error) {

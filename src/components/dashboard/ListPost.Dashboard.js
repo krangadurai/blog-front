@@ -42,16 +42,12 @@ const ListPostDashboard = () => {
   },[loginState])
 
   const deleteBlog = async (id) => {
-    const headers = {
-      Authorization: `Bearer ${loginState.token}`,
-    };
-  
-    // Show a confirmation dialog
+   
     const confirmed = window.confirm('Are you sure you want to delete this blog post?');
   
     if (confirmed) {
       try {
-        await BlogPostApi.delete(id, headers);
+        await BlogPostApi.delete(id);
         console.log('Blog post deleted successfully!');
         await fetchblogPosts;
         // Add code here to refresh the component or fetch updated data

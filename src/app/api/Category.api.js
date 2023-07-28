@@ -8,16 +8,16 @@ class Categoryapi {
       return api.get(`/api/categories/${id}`);
     }
   
-    create(data,headers) {
-      return api.post('/api/categories', data,{headers});
+    create(data) {
+      return api.post('/api/categories', data);
     }
   
-    update(id, data,headers) {
-      return api.put(`/api/categories/${id}`, data,{headers});
+    update(id, data) {
+      return api.put(`/api/categories/${id}`, data);
     }
   
-    delete(id,headers) {
-      return api.delete(`/api/categories/${id}`,{headers});
+    delete(id) {
+      return api.delete(`/api/categories/${id}`);
     }
   
   }

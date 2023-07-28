@@ -17,17 +17,17 @@ class BlogPostapi {
       return api.get(`/api/blogposts/tag/${id}`);
     }
 
-    create(data,headers) {
-      return api.post(`/api/blogposts/`, data, { headers });
+    create(data) {
+      return api.post(`/api/blogposts/`, data);
     }
   
-    update = (id, data,headers) => {
+    update = (id, data) => {
     
-      return api.put(`/api/blogposts/${id}`, data, { headers });
+      return api.put(`/api/blogposts/${id}`, data);
     };
   
-    delete(id,headers) {
-      return api.delete(`/api/blogposts/${id}`, { headers });
+    delete(id) {
+      return api.delete(`/api/blogposts/${id}`);
     }
   
 }

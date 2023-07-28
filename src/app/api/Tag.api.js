@@ -8,8 +8,8 @@ class Tagapi {
       return api.get(`/api/tags/${id}`);
     }
   
-    create(data,headers) {
-      return api.post('/api/tags', data,{ headers });
+    create(data) {
+      return api.post('/api/tags', data);
     }
   
     update(id, data) {

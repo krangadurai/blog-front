@@ -42,11 +42,8 @@ const CategoryFormDashboard = () => {
     };
     const CrateCategory= async (data) =>{
         try {
-          const headers = {
-            Authorization: `Bearer ${loginState.token}`,
-          };
           console.log(data)
-          await CategoryApi.create( data, headers);
+          await CategoryApi.create( data);
           console.log('Category create suceesfully');
           history.push("/dashboard/listcategory"); 
         } catch (error) {

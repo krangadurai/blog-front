@@ -42,11 +42,9 @@ const TagFormDashboard = () => {
     };
     const CrateTag= async (data) =>{
         try {
-          const headers = {
-            Authorization: `Bearer ${loginState.token}`,
-          };
+          
           console.log(data)
-          await TagApi.create( data, headers);
+          await TagApi.create( data);
           console.log('Tag create suceesfully');
           history.push("/dashboard/listtag"); 
         } catch (error) {
