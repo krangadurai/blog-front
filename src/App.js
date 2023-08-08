@@ -9,6 +9,7 @@ import Signup from './components/Signup';
 import BlogBody from './components/BlogBody';
 import Dashboard from './components/Dashboard';
 import AboutUs from './components/AboutUs';
+import DynamicForm from './field/DynamicForm';
 function App() {
   return (
     <Router>
@@ -19,6 +20,7 @@ function App() {
           <Header />
           <main  class="main" style={{ transform: 'none' }}>
           <Switch>
+            <Route exact path='/' component={DynamicForm}/>
             <Route exact path="/" component={BlogBody} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
